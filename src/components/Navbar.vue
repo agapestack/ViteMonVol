@@ -12,8 +12,8 @@
     <div class="horizontal-separator"></div>
 
     <div class="nav-section nav-center">
-      <a class="menu-link" href="#">Accueil</a>
-      <a class="menu-link" href="#">Circuits</a>
+      <a class="menu-link" href="/">Accueil</a>
+      <a class="menu-link" href="/circuits">Circuits</a>
       <a class="menu-link" href="#">À Propos</a>
       <a class="menu-link" href="#">Contacts</a>
     </div>
@@ -21,12 +21,16 @@
     <div class="horizontal-separator"></div>
 
     <div class="nav-section nav-right">
-      <a href="#" style="color: #00acee"><i class="fab fa-twitter"></i></a>
-      <a href="#" style="color: #3b5998"><i class="fab fa-facebook"></i></a>
-      <a href="#" style="color: #db4a39"
-        ><i class="fab fa-google-plus-g"></i
-      ></a>
-      <a href="#" style="color: #25d366"><i class="fab fa-whatsapp"></i></a>
+      <a href="/auth" style="font-size: 1.2rem">Connexion</a>
+
+      <div class="social">
+        <a href="#" style="color: #00acee"><i class="fab fa-twitter"></i></a>
+        <a href="#" style="color: #3b5998"><i class="fab fa-facebook"></i></a>
+        <a href="#" style="color: #db4a39"
+          ><i class="fab fa-google-plus-g"></i
+        ></a>
+        <a href="#" style="color: #25d366"><i class="fab fa-whatsapp"></i></a>
+      </div>
     </div>
   </div>
 </template>
@@ -85,9 +89,14 @@ a i:hover {
   width: 50%;
 }
 
+.nav-right {
+  display: flex;
+  justify-content: space-around;
+}
+
 .nav-center a {
-    color: black;
-    transition: transform .2s;
+  color: black;
+  transition: transform 0.2s;
 }
 
 .nav-center a:hover {

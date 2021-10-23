@@ -2,8 +2,6 @@
   <div id="app">
     <Navbar />
 
-    <div class="fake-na"></div>
-
     <router-view id="view" />
 
     <Footer />
@@ -36,8 +34,9 @@ body {
 }
 
 #view {
-  min-height: calc(100vh - 64px);
+  min-height: calc(100vh);
   position: relative;
   top: 64px;
 }
+
 </style>
