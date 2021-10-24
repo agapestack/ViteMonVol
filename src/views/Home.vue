@@ -9,14 +9,16 @@
         >Découvrir la liberté</span
       >
 
-      <button
-        class="hero-btn"
-        data-aos="fade-up"
-        data-aos-delay="2000"
-        data-aos-duration="1000"
+      <a href="/circuits">
+        <button
+          class="hero-btn"
+          data-aos="fade-up"
+          data-aos-delay="2000"
+          data-aos-duration="1000"
+        >
+          Explorer Maintenant!
+        </button></a
       >
-        Explorer Maintenant!
-      </button>
     </div>
 
     <div class="svg-animation">

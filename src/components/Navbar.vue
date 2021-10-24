@@ -14,7 +14,7 @@
     <div class="nav-section nav-center">
       <a class="menu-link" href="/">Accueil</a>
       <a class="menu-link" href="/circuits">Circuits</a>
-      <a class="menu-link" href="#">À Propos</a>
+      <a class="menu-link" href="/a-propos">À Propos</a>
       <a class="menu-link" href="#">Contacts</a>
     </div>
 

@@ -1,6 +1,11 @@
 <template>
   <div class="auth-wrapper">
-    <div class="auth auth-register">
+    <div
+      class="auth auth-register"
+      v-if="showRegister"
+      data-aos="fade-left"
+      data-aos-duration="1000"
+    >
       <div class="form-register form">
         <h1>Inscription</h1>
         <hr />
@@ -38,10 +43,19 @@
         </div>
 
         <button type="submit" class="registerbtn">Validation</button>
+
+        <span id="switch-auth" @click="switchAuth"
+          >Déjà un compte? Connectez-vous!</span
+        >
       </div>
     </div>
 
-    <div class="auth auth-login">
+    <div
+      class="auth auth-login"
+      v-else
+      data-aos="fade-left"
+      data-aos-duration="1000"
+    >
       <div class="form-login form">
         <h1>Connexion</h1>
         <hr />
@@ -69,6 +83,10 @@
         </div>
 
         <button type="submit" class="loginbtn">Valider</button>
+
+        <span id="switch-auth" @click="switchAuth"
+          >Pas encore de compte? Inscrivez-vous maintenant!</span
+        >
       </div>
     </div>
   </div>
@@ -77,20 +95,50 @@
 <script>
 export default {
   name: "Auth",
+  data() {
+    return {
+      showRegister: false,
+    };
+  },
+  methods: {
+    switchAuth() {
+      this.showRegister = !this.showRegister;
+    },
+  },
 };
 </script>
 
 <style scoped>
+#switch-auth {
+  margin: 0.5rem;
+  margin-top: 1.5rem;
+}
+
+#switch-auth:hover {
+  text-decoration: underline;
+}
+
 .auth-wrapper {
   margin: 0 auto;
-  max-width: 1136px;
-  max-height: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-wrapper::after {
+  content: "";
+  background: url("../assets/auth_background.jpg");
+  background-size: cover;
+  opacity: 0.7;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
 }
 
 .auth {
-  /* max-width: 1136px; */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -98,11 +146,19 @@ export default {
 }
 
 .form {
-  border: 1px solid black;
-  padding: 1rem;
+  opacity: 1 !important;
+  background-color: white;
+  border: 1px solid orange;
+  box-shadow: 4px 4px orange;
+  padding: 2rem;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+}
+
+input {
+  border: 1px solid rgba(128, 128, 128, 0.219);
+  border-radius: 3px;
 }
 
 .form-input {

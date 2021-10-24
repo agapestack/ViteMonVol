@@ -2,7 +2,11 @@
   <div id="app">
     <Navbar />
 
-    <router-view id="view" />
+    <div class="fake-nav"></div>
+
+    <main>
+      <router-view id="view" />
+    </main>
 
     <Footer />
   </div>
@@ -33,10 +37,26 @@ body {
   overflow-x: hidden;
 }
 
-#view {
-  min-height: calc(100vh);
-  position: relative;
-  top: 64px;
+#app {
+  display: grid;
+  grid-template-rows: 64px 1fr 20vh;
 }
 
+#view {
+  min-height: calc(100vh - 64px);
+  overflow: scroll;
+}
+
+button {
+  background-color: #fdbd0b;
+  padding: 0.2rem;
+  border: none;
+  color: white;
+  text-transform: uppercase;
+  height: auto;
+  width: inherit;
+  box-shadow: 2px 2px rgba(77, 77, 77, 0.1);
+  cursor: pointer;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
 </style>

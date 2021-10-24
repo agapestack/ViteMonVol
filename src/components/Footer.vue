@@ -40,10 +40,6 @@ a i:hover {
   transform: scale(1.3);
 }
 
-#footer {
-  display: block;
-}
-
 .footer {
   width: 100vw;
   height: 20vh;
